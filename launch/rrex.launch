@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+    <node pkg="rrex" type="imu" name="imu_node" output="screen">
+        <param name="calibration_file_path" value="$(find rrex)/config"/>
+        <param name="calibration_file_name" value="imu" />
+        <param name="frame_id" value="imu"/>
+    </node>
+    <node pkg="rrex" type="localization" name="loc_node" output="screen"/> 
+    <node pkg="rrex" type="encoder.py" name="encoder_node" /> 
+    <node pkg="rrex" type="mqtt_ldr.py" name="ldr_node"  /> 
+
+</launch>
